@@ -16,17 +16,13 @@ import "hardhat-gas-reporter";
 import "@nomiclabs/hardhat-etherscan";
 
 const chainIds = {
-  ganache: 1337,
-  goerli: 5,
-  hardhat: 31337,
-  kovan: 42,
-  mainnet: 1,
-  rinkeby: 4,
-  ropsten: 3,
+  ["polygon-mumbai"]: 80001,
+  ["polygon-mainnet"]: 137,
+  hardhat: 31337
 };
 
 const MNEMONIC = process.env.MNEMONIC || "";
-const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || "";
+const POLYGONSCAN_API_KEY = process.env.POLYGONSCAN_API_KEY || "";
 const INFURA_API_KEY = process.env.INFURA_API_KEY || "";
 const ALCHEMY_KEY = process.env.ALCHEMY_KEY || "";
 
@@ -66,11 +62,8 @@ const config: HardhatUserConfig = {
       },
       chainId: chainIds.hardhat,
     },
-    mainnet: createTestnetConfig("mainnet"),
-    goerli: createTestnetConfig("goerli"),
-    kovan: createTestnetConfig("kovan"),
-    rinkeby: createTestnetConfig("rinkeby"),
-    ropsten: createTestnetConfig("ropsten"),
+    polygon_mumbai: createTestnetConfig("polygon-mumbai"),
+    polygon_mainnet: createTestnetConfig("polygon-mainnet")
   },
   solidity: {
     compilers: [
@@ -83,7 +76,7 @@ const config: HardhatUserConfig = {
     ],
   },
   etherscan: {
-    apiKey: ETHERSCAN_API_KEY,
+    apiKey: POLYGONSCAN_API_KEY,
   },
   gasReporter: {
     currency: "USD",

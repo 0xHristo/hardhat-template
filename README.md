@@ -1,6 +1,4 @@
-# Solidity Template
-
-Uses
+## Uses
 
 - [Hardhat](https://github.com/nomiclabs/hardhat): compile and run the smart contracts on a local development network
 - [TypeChain](https://github.com/ethereum-ts/TypeChain): generate TypeScript types for smart contracts
@@ -9,9 +7,6 @@ Uses
 - [Solhint](https://github.com/protofire/solhint): linter
 - [Prettier Plugin Solidity](https://github.com/prettier-solidity/prettier-plugin-solidity): code formatter
 
-This is a GitHub template, which means you can reuse it as many times as you want. You can do that by clicking the "Use this
-template" button at the top of the page.
-
 ## Usage
 
 ### Pre Requisites
@@ -19,7 +14,7 @@ template" button at the top of the page.
 Before running any command, make sure to install dependencies:
 
 ```sh
-$ yarn install
+$ npm install
 ```
 
 ### Compile
@@ -27,7 +22,7 @@ $ yarn install
 Compile the smart contracts with Hardhat:
 
 ```sh
-$ yarn compile
+$ npm compile
 ```
 
 ### Test
@@ -35,16 +30,16 @@ $ yarn compile
 Run the Mocha tests:
 
 ```sh
-$ yarn test
+$ npm test
 ```
 
 ### Deploy contract to netowrk (requires Mnemonic and infura API key)
 
 ```
-npx hardhat run --network rinkeby ./scripts/deploy.ts
+npx hardhat run --network polygon_mumbai ./scripts/deploy.ts
 ```
 
-### Validate a contract with etherscan (requires API ke)
+### Validate a contract with etherscan (requires API key)
 
 ```
 npx hardhat verify --network <network> <DEPLOYED_CONTRACT_ADDRESS> "Constructor argument 1"
@@ -54,7 +49,3 @@ npx hardhat verify --network <network> <DEPLOYED_CONTRACT_ADDRESS> "Constructor 
 
 - Gas reporter [hardhat-gas-reporter](https://hardhat.org/plugins/hardhat-gas-reporter.html)
 - Etherscan [hardhat-etherscan](https://hardhat.org/plugins/nomiclabs-hardhat-etherscan.html)
-
-## Thanks
-
-If you like it than you soulda put a start ⭐ on it 
